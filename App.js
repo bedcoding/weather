@@ -4,14 +4,13 @@ import Loading from "./Loading"
 import * as Location from "expo-location"
 import axios from "axios"
 import Weather from "./Weather"
-import { Ionicons } from "@expo/vector-icons"
 
 // 제작 과정 메모: https://cafe.naver.com/ggavi2000/12027
 // API 호출 방법: api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&APPID=내 API키
 // 여기서 {lat}이랑 {lon} 부분에 latitude와 longitude 값을 넣어주고 주소창에 넣으면 json 파일 형태로 뜬다.
 // 실제 링크 예시: http://api.openweathermap.org/data/2.5/weather?lat=37.4219506&lon=-122.0840128&APPID=내 API키
 
-const API_KEY = "여기다 api 키를 넣거라" // https://home.openweathermap.org/api_keys 여기서 키를 받았다.
+const API_KEY = "너의 api키" // https://home.openweathermap.org/api_keys 여기서 키를 받았다.
 
 export default class extends React.Component {
   state = { isLoading: true } // 로딩중...
@@ -41,9 +40,8 @@ export default class extends React.Component {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync() // 위치 찾기
       this.getWeather(latitude, longitude)
-      this.setState({ isLoading: false }) // 로딩 끝
     } catch (error) {
-      Alert.alert("당신을 찾을 수 없습니다", "으앙")
+      Alert.alert("당신의 위치를 찾을 수 없습니다", "오류")
     }
   }
 

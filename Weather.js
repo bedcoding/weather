@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons"
 
 const weatherOptions = {
   // 콘솔 로그로 찍어보니 처음 2번은 undefined를 보내다가 3번째에 정상적인 값을 받아오길래 undefined가 들어오면 로딩중으로 뜨게 함
+  
   undefined: {
     iconName: "sync", // 로딩 아이콘
     gradient: ["black", "#D39D38"],
@@ -90,12 +91,10 @@ export default function Weather({ temp, condition }) {
 }
 
 // 컴포넌트의 props 타입 확인: `isRequired`는 prop가 제공되지 않았을 때 경고를 보여줍니다.
-// (수정) 현재 이 코드가 경고를 일으킨다. 그래서 콘솔 로그로 값을 확인해 보니 처음 시도는 API로부터 값을 못 받다가, 3번째 시도에 값을 받아오더라.
-
-// Weather.propTypes = {
-//   temp: PropTypes.number.isRequired,
-//   condition: PropTypes.oneOf(["Thunderstorm", "Drizzle", "Rain", "Snow", "Atmosphere", "Clear", "Clouds", "Haze", "Mist", "Dust"]).isRequired,
-// }
+Weather.propTypes = {
+  temp: PropTypes.number.isRequired,
+  condition: PropTypes.oneOf(["Thunderstorm", "Drizzle", "Rain", "Snow", "Atmosphere", "Clear", "Clouds", "Haze", "Mist", "Dust"]).isRequired,
+}
 
 const styles = StyleSheet.create({
   container: {
