@@ -11,7 +11,7 @@ import { Ionicons } from "@expo/vector-icons"
 // 여기서 {lat}이랑 {lon} 부분에 latitude와 longitude 값을 넣어주고 주소창에 넣으면 json 파일 형태로 뜬다.
 // 실제 링크 예시: http://api.openweathermap.org/data/2.5/weather?lat=37.4219506&lon=-122.0840128&APPID=내 API키
 
-const API_KEY = "8c8b7c1d506b1e9dc8b0d43ea421f905" // https://home.openweathermap.org/api_keys 여기서 키를 받았다.
+const API_KEY = "여기다 api 키를 넣거라" // https://home.openweathermap.org/api_keys 여기서 키를 받았다.
 
 export default class extends React.Component {
   state = { isLoading: true } // 로딩중...
